@@ -23,71 +23,20 @@ const notifications = [
   }
 ]
 
-const shortcuts = [
-  {
-    title: 'Calendar',
-    url: '/apps/calendar',
-    icon: 'tabler:calendar',
-    subtitle: 'Appointments'
-  },
-  {
-    title: 'Invoice App',
-    url: '/apps/invoice/list',
-    icon: 'tabler:file-invoice',
-    subtitle: 'Manage Accounts'
-  },
-  {
-    title: 'User App',
-    icon: 'tabler:users',
-    url: '/apps/user/list',
-    subtitle: 'Manage Users'
-  },
-  {
-    url: '/apps/roles',
-    icon: 'tabler:lock',
-    subtitle: 'Permissions',
-    title: 'Role Management'
-  },
-  {
-    subtitle: 'CRM',
-    title: 'Dashboard',
-    url: '/dashboards/crm',
-    icon: 'tabler:device-analytics'
-  },
-  {
-    title: 'Settings',
-    icon: 'tabler:settings',
-    subtitle: 'Account Settings',
-    url: '/pages/account-settings/account'
-  },
-  {
-    icon: 'tabler:help',
-    title: 'Help Center',
-    url: '/pages/help-center',
-    subtitle: 'FAQs & Articles'
-  },
-  {
-    title: 'Dialogs',
-    icon: 'tabler:square',
-    subtitle: 'Useful Popups',
-    url: '/pages/dialog-examples'
-  }
-]
-
 const AppBarContent = props => {
   // ** Props
   const { hidden, settings, saveSettings, toggleNavVisibility } = props
 
   return (
     <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-      <Box className='actions-left' sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
+      {/* <Box className='actions-left' sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
         {hidden && !settings.navHidden ? (
           <IconButton color='inherit' sx={{ ml: -2.75 }} onClick={toggleNavVisibility}>
             <Icon fontSize='1.5rem' icon='tabler:menu-2' />
           </IconButton>
         ) : null}
         <Autocomplete hidden={hidden} settings={settings} />
-      </Box>
+      </Box> */}
       <Box className='actions-right' sx={{ display: 'flex', alignItems: 'center' }}>
         {/* <LanguageDropdown settings={settings} saveSettings={saveSettings} />
         <ShortcutsDropdown settings={settings} shortcuts={shortcuts} /> */}

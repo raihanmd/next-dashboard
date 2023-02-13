@@ -17,6 +17,7 @@ import VerticalNavHeader from './VerticalNavHeader'
 
 // ** Util Import
 import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
+import { Avatar, Badge, Divider, Typography } from '@mui/material'
 
 const StyledBoxForShadow = styled(Box)(({ theme }) => ({
   top: 60,
@@ -111,9 +112,19 @@ const Navigation = props => {
   }
   const ScrollWrapper = hidden ? Box : PerfectScrollbar
 
+  const BadgeContentSpan = styled('span')(({ theme }) => ({
+    width: 8,
+    height: 8,
+    borderRadius: '50%',
+    backgroundColor: theme.palette.success.main,
+    boxShadow: `0 0 0 2px ${theme.palette.background.paper}`
+  }))
+
   return (
     <Drawer {...props} navHover={navHover} setNavHover={setNavHover} navigationBorderWidth={navigationBorderWidth}>
       <VerticalNavHeader {...props} navHover={navHover} />
+
+      <Divider sx={{ my: theme => `${theme.spacing(2)} !important` }} />
       {beforeNavMenuContent && beforeVerticalNavMenuContentPosition === 'fixed' ? beforeNavMenuContent(props) : null}
       {(beforeVerticalNavMenuContentPosition === 'static' || !beforeNavMenuContent) && (
         <StyledBoxForShadow ref={shadowRef} sx={{ background: shadowBgColor() }} />

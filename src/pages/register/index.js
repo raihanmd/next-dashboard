@@ -174,7 +174,7 @@ const Register = () => {
             <p>Logo here</p>
             <Box sx={{ my: 6 }}>
               <Typography sx={{ mb: 1.5, fontWeight: 500, fontSize: '1.625rem', lineHeight: 1.385 }}>
-                Adventure starts here 🚀
+                Buat Akun
               </Typography>
               <Typography sx={{ color: 'text.secondary' }}>Make your app management easy and fun!</Typography>
             </Box>

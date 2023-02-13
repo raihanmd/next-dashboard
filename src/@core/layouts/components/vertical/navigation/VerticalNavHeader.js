@@ -12,6 +12,7 @@ import Icon from 'src/@core/components/icon'
 
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
+import { Avatar, Badge } from '@mui/material'
 
 // ** Styled Components
 const MenuHeaderWrapper = styled(Box)(({ theme }) => ({
@@ -37,7 +38,7 @@ const LinkStyled = styled(Link)({
   textDecoration: 'none'
 })
 
-const VerticalNavHeader = props => {
+export const VerticalNavHeader = props => {
   // ** Props
   const {
     hidden,
@@ -84,56 +85,87 @@ const VerticalNavHeader = props => {
       }
     }
   }
+
+  const BadgeContentSpan = styled('span')(({ theme }) => ({
+    width: 8,
+    height: 8,
+    borderRadius: '50%',
+    backgroundColor: theme.palette.success.main,
+    boxShadow: `0 0 0 2px ${theme.palette.background.paper}`
+  }))
+
   const MenuLockedIcon = () => userMenuLockedIcon || <Icon icon='tabler:circle-dot' />
   const MenuUnlockedIcon = () => userMenuUnlockedIcon || <Icon icon='tabler:circle' />
 
   return (
-    <MenuHeaderWrapper className='nav-header' sx={{ pl: menuHeaderPaddingLeft(), ...conditionalColors() }}>
-      {userNavMenuBranding ? (
-        userNavMenuBranding(props)
-      ) : (
-        <LinkStyled href='/'>
-          <p>Logo</p>
-          <HeaderTitle variant='h6' sx={{ ...menuCollapsedStyles, ...(navCollapsed && !navHover ? {} : { ml: 2.5 }) }}>
-            {themeConfig.templateName}
-          </HeaderTitle>
-        </LinkStyled>
-      )}
+    <>
+      <MenuHeaderWrapper className='nav-header' sx={{ pl: menuHeaderPaddingLeft(), ...conditionalColors() }}>
+        {userNavMenuBranding ? (
+          userNavMenuBranding(props)
+        ) : (
+          <LinkStyled href='/'>
+            <p>Logo</p>
+            <HeaderTitle
+              variant='h6'
+              sx={{ ...menuCollapsedStyles, ...(navCollapsed && !navHover ? {} : { ml: 2.5 }) }}
+            >
+              {themeConfig.templateName}
+            </HeaderTitle>
+          </LinkStyled>
+        )}
 
-      {hidden ? (
-        <IconButton
-          disableRipple
-          disableFocusRipple
-          onClick={toggleNavVisibility}
-          sx={{
-            p: 0,
-            backgroundColor: 'transparent !important',
-            color: `${
-              mode === 'semi-dark' ? `rbga(${theme.palette.customColors.dark}, 0.6)` : theme.palette.text.secondary
-            } !important`
+        {hidden ? (
+          <IconButton
+            disableRipple
+            disableFocusRipple
+            onClick={toggleNavVisibility}
+            sx={{
+              p: 0,
+              backgroundColor: 'transparent !important',
+              color: `${
+                mode === 'semi-dark' ? `rbga(${theme.palette.customColors.dark}, 0.6)` : theme.palette.text.secondary
+              } !important`
+            }}
+          >
+            <Icon icon='tabler:x' fontSize='1.25rem' />
+          </IconButton>
+        ) : userMenuLockedIcon === null && userMenuUnlockedIcon === null ? null : (
+          <IconButton
+            disableRipple
+            disableFocusRipple
+            onClick={() => saveSettings({ ...settings, navCollapsed: !navCollapsed })}
+            sx={{
+              p: 0,
+              backgroundColor: 'transparent !important',
+              '& svg': {
+                fontSize: '1.25rem',
+                ...menuCollapsedStyles,
+                transition: 'opacity .25s ease-in-out'
+              }
+            }}
+          >
+            {navCollapsed ? MenuUnlockedIcon() : MenuLockedIcon()}
+          </IconButton>
+        )}
+      </MenuHeaderWrapper>
+
+      <Box sx={{ pl: menuHeaderPaddingLeft, display: 'flex' }}>
+        <Badge
+          overlap='circular'
+          badgeContent={<BadgeContentSpan />}
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'right'
           }}
         >
-          <Icon icon='tabler:x' fontSize='1.25rem' />
-        </IconButton>
-      ) : userMenuLockedIcon === null && userMenuUnlockedIcon === null ? null : (
-        <IconButton
-          disableRipple
-          disableFocusRipple
-          onClick={() => saveSettings({ ...settings, navCollapsed: !navCollapsed })}
-          sx={{
-            p: 0,
-            backgroundColor: 'transparent !important',
-            '& svg': {
-              fontSize: '1.25rem',
-              ...menuCollapsedStyles,
-              transition: 'opacity .25s ease-in-out'
-            }
-          }}
-        >
-          {navCollapsed ? MenuUnlockedIcon() : MenuLockedIcon()}
-        </IconButton>
-      )}
-    </MenuHeaderWrapper>
+          <Avatar alt='John Doe' src='/images/avatars/1.png' sx={{ width: '2.5rem', height: '2.5rem' }} />
+        </Badge>{' '}
+        <Box sx={{ display: 'flex', ml: 2.5, alignItems: 'flex-start', flexDirection: 'column' }}>
+          <Typography sx={{ fontWeight: 500 }}>John Doe</Typography>
+          <Typography variant='body2'>Admin</Typography>
+        </Box>
+      </Box>
+    </>
   )
 }
 
