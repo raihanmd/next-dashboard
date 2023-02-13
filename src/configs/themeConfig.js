@@ -4,9 +4,10 @@
  * ! IMPORTANT: Make sure you clear the browser local storage in order to see the config changes in the template.
  * ! To clear local storage, you may refer https://www.leadshook.com/help/how-to-clear-local-storage-in-google-chrome-browser/.
  */
+
 const themeConfig = {
   // ** Layout Configs
-  templateName: 'Vuexy' /* App Name */,
+  templateName: 'App Name' /* App Name */,
   layout: 'vertical' /* vertical | horizontal */,
   mode: 'light' /* light | dark | semi-dark /*! Note: semi-dark value will only work for Vertical Layout */,
   direction: 'ltr' /* ltr | rtl */,
