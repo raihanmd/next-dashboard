@@ -60,6 +60,11 @@ const UserDropdown = props => {
     setAnchorEl(null)
   }
 
+  const handleLogout = () => {
+    logout()
+    handleDropdownClose()
+  }
+
   const styles = {
     px: 4,
     py: 1.75,
@@ -74,16 +79,10 @@ const UserDropdown = props => {
     }
   }
 
-  const handleLogout = () => {
-    logout()
-    handleDropdownClose()
-  }
-
   return (
     <Fragment>
       <Badge
         overlap='circular'
-        onClick={handleDropdownOpen}
         sx={{ ml: 2, cursor: 'pointer' }}
         badgeContent={<BadgeContentSpan />}
         anchorOrigin={{
@@ -98,33 +97,18 @@ const UserDropdown = props => {
           src='/images/avatars/1.png'
         />
       </Badge>
+      <Box sx={{ display: 'flex', ml: 2.5, alignItems: 'flex-start', flexDirection: 'column' }}>
+        <Typography sx={{ fontWeight: 500 }}>John Doe</Typography>
+        <Typography variant='body2'>Admin</Typography>
+      </Box>{' '}
       <Menu
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={() => handleDropdownClose()}
         sx={{ '& .MuiMenu-paper': { width: 230, mt: 4.5 } }}
-        anchorOrigin={{ vertical: 'bottom', horizontal: direction === 'ltr' ? 'right' : 'left' }}
-        transformOrigin={{ vertical: 'top', horizontal: direction === 'ltr' ? 'right' : 'left' }}
+        anchorOrigin={{ vertical: 'left', horizontal: direction === 'ltr' ? 'right' : 'left' }}
+        transformOrigin={{ vertical: 'right', horizontal: direction === 'ltr' ? 'right' : 'left' }}
       >
-        <Box sx={{ py: 1.75, px: 6 }}>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Badge
-              overlap='circular'
-              badgeContent={<BadgeContentSpan />}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'right'
-              }}
-            >
-              <Avatar alt='John Doe' src='/images/avatars/1.png' sx={{ width: '2.5rem', height: '2.5rem' }} />
-            </Badge>
-            <Box sx={{ display: 'flex', ml: 2.5, alignItems: 'flex-start', flexDirection: 'column' }}>
-              <Typography sx={{ fontWeight: 500 }}>John Doe</Typography>
-              <Typography variant='body2'>Admin</Typography>
-            </Box>
-          </Box>
-        </Box>
-        <Divider sx={{ my: theme => `${theme.spacing(2)} !important` }} />
         {/* <MenuItemStyled sx={{ p: 0 }} onClick={() => handleDropdownClose('/pages/user-profile/profile')}>
           <Box sx={styles}>
             <Icon icon='tabler:user-check' />
@@ -155,14 +139,14 @@ const UserDropdown = props => {
             <Icon icon='tabler:currency-dollar' />
             Pricing
           </Box>
-        </MenuItemStyled>
-        <MenuItemStyled sx={{ p: 0 }} onClick={() => handleDropdownClose('/pages/faq')}>
+      </MenuItemStyled> */}
+        <MenuItemStyled sx={{ p: 0 }} onClick={() => handleDropdownClose()}>
           <Box sx={styles}>
-            <Icon icon='tabler:help' />
-            FAQ
+            <Icon icon='material-symbols:close' />
+            Close
           </Box>
         </MenuItemStyled>
-        <Divider sx={{ my: theme => `${theme.spacing(2)} !important` }} /> */}
+        <Divider sx={{ my: theme => `${theme.spacing(2)} !important` }} />
         <MenuItemStyled onClick={handleLogout} sx={{ py: 2, '& svg': { mr: 2, fontSize: '1.375rem' } }}>
           <Icon icon='tabler:logout' />
           Logout

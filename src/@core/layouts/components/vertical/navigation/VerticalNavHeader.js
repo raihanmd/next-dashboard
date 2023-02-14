@@ -12,7 +12,7 @@ import Icon from 'src/@core/components/icon'
 
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
-import { Avatar, Badge } from '@mui/material'
+import UserDropdown from '../../shared-components/UserDropdown'
 
 // ** Styled Components
 const MenuHeaderWrapper = styled(Box)(({ theme }) => ({
@@ -86,14 +86,6 @@ export const VerticalNavHeader = props => {
     }
   }
 
-  const BadgeContentSpan = styled('span')(({ theme }) => ({
-    width: 8,
-    height: 8,
-    borderRadius: '50%',
-    backgroundColor: theme.palette.success.main,
-    boxShadow: `0 0 0 2px ${theme.palette.background.paper}`
-  }))
-
   const MenuLockedIcon = () => userMenuLockedIcon || <Icon icon='tabler:circle-dot' />
   const MenuUnlockedIcon = () => userMenuUnlockedIcon || <Icon icon='tabler:circle' />
 
@@ -150,7 +142,7 @@ export const VerticalNavHeader = props => {
       </MenuHeaderWrapper>
 
       <Box sx={{ pl: menuHeaderPaddingLeft, display: 'flex' }}>
-        <Badge
+        {/* <Badge
           overlap='circular'
           badgeContent={<BadgeContentSpan />}
           anchorOrigin={{
@@ -163,7 +155,8 @@ export const VerticalNavHeader = props => {
         <Box sx={{ display: 'flex', ml: 2.5, alignItems: 'flex-start', flexDirection: 'column' }}>
           <Typography sx={{ fontWeight: 500 }}>John Doe</Typography>
           <Typography variant='body2'>Admin</Typography>
-        </Box>
+        </Box> */}
+        <UserDropdown settings={settings} />
       </Box>
     </>
   )
