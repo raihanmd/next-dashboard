@@ -3,77 +3,44 @@ export const navItem = [
     sectionTitle: 'Dashboards'
   },
   {
-    title: 'Sekolah',
-    icon: 'teenyicons:school-outline',
+    title: 'Home',
+    icon: 'teenyicons:home-outline',
+    path: '/home'
+  },
+  {
+    title: 'Data Pemilu',
+    icon: 'majesticons:data-line',
     children: [
       {
-        title: 'Informasi Umum',
-        path: '/sekolah/informasi'
+        title: 'Saksi',
+        path: '/data/saksi'
       },
       {
-        title: 'Data Guru',
-        path: '/sekolah/guru'
+        title: 'Relawan',
+        path: '/data/relawan'
       },
       {
-        title: 'Sejarah & Visi Misi',
-        path: '/sekolah/sejarah'
+        title: 'Kordes',
+        path: '/data/kordes'
       },
       {
-        title: 'Jurusan',
-        path: '/sekolah/jurusan'
+        title: 'Kordus',
+        path: '/data/kordus'
+      },
+      {
+        title: 'DPT',
+        path: '/data/dpt'
       }
     ]
   },
   {
-    title: 'Siswa',
-    icon: 'ph:student',
-    children: [
-      {
-        title: 'Data Siswa',
-        path: '/siswa/data'
-      },
-      {
-        title: 'Kelas',
-        path: '/siswa/kelas'
-      }
-    ]
+    title: 'Input Data',
+    icon: 'radix-icons:input',
+    path: '/input'
   },
   {
-    title: 'Pembayaran',
-    icon: 'vaadin:cash',
-    children: [
-      {
-        title: 'SPP',
-        path: '/pembayaran/spp'
-      },
-      {
-        title: 'Tabungan Siswa',
-        path: '/pembayaran/tabungan'
-      },
-      {
-        title: 'Lainnya',
-        path: '/pembayaran/lainnya',
-        disabled: true
-      }
-    ]
-  },
-  {
-    sectionTitle: 'Add Ons'
-  },
-  {
-    title: 'PPDB',
-    icon: 'bi:people'
-  },
-  {
-    title: 'Alumni',
-    icon: 'material-symbols:school-outline-rounded'
-  },
-  {
-    title: 'Absensi',
-    icon: 'bi:qr-code-scan'
-  },
-  {
-    title: 'Agenda Guru',
-    icon: 'mdi:teach'
+    title: 'Menu',
+    icon: 'ep:menu',
+    path: '/menu'
   }
 ]
