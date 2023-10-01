@@ -20,6 +20,9 @@ import Card from '@mui/material/Card'
 import TableBasic from 'src/views/table/mui/TableBasic'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
+import CrmSalesWithAreaChart from 'src/views/dashboards/crm/CrmSalesWithAreaChart'
+import CrmSessions from 'src/views/dashboards/crm/CrmSessions'
+import TableFilter from 'src/views/table/data-grid/TableFilter'
 
 const Home = () => {
   return (
@@ -61,6 +64,9 @@ const Home = () => {
         </Grid>
         <Grid item xs={12}>
           <ApexDonutChart />
+        </Grid>
+        <Grid item xs={12}>
+          <TableFilter />
         </Grid>
         {/* <Grid item xs={12} lg={8}>
           <CrmEarningReportsWithTabs />

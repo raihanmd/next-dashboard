@@ -23,25 +23,17 @@ import { rows } from 'src/@fake-db/table/static-data'
 const renderClient = params => {
   const { row } = params
   const stateNum = Math.floor(Math.random() * 6)
-  const states = ['success', 'error', 'warning', 'info', 'primary', 'secondary']
-  const color = states[stateNum]
-  if (row.avatar.length) {
-    return <CustomAvatar src={`/images/avatars/${row.avatar}`} sx={{ mr: 3, width: '1.875rem', height: '1.875rem' }} />
-  } else {
-    return (
-      <CustomAvatar skin='light' color={color} sx={{ mr: 3, fontSize: '.8rem', width: '1.875rem', height: '1.875rem' }}>
-        {getInitials(row.full_name ? row.full_name : 'John Doe')}
-      </CustomAvatar>
-    )
-  }
-}
-
-const statusObj = {
-  1: { title: 'current', color: 'primary' },
-  2: { title: 'professional', color: 'success' },
-  3: { title: 'rejected', color: 'error' },
-  4: { title: 'resigned', color: 'warning' },
-  5: { title: 'applied', color: 'info' }
+  // const states = ['success', 'error', 'warning', 'info', 'primary', 'secondary']
+  // const color = states[stateNum]
+  // if (row.avatar.length) {
+  //   return <CustomAvatar src={`/images/avatars/${row.avatar}`} sx={{ mr: 3, width: '1.875rem', height: '1.875rem' }} />
+  // } else {
+  //   return (
+  //     <CustomAvatar skin='light' color={color} sx={{ mr: 3, fontSize: '.8rem', width: '1.875rem', height: '1.875rem' }}>
+  //       {getInitials(row.full_name ? row.full_name : 'John Doe')}
+  //     </CustomAvatar>
+  //   )
+  // }
 }
 
 const escapeRegExp = value => {
@@ -75,55 +67,79 @@ const columns = [
   {
     flex: 0.2,
     minWidth: 120,
-    headerName: 'Date',
-    field: 'start_date',
+    headerName: 'nik',
+    field: 'nik',
     renderCell: params => (
       <Typography variant='body2' sx={{ color: 'text.primary' }}>
-        {params.row.start_date}
+        {params.row.nik}
       </Typography>
     )
   },
   {
     flex: 0.2,
     minWidth: 110,
-    field: 'salary',
-    headerName: 'Salary',
+    field: 'alamat',
+    headerName: 'alamat',
     renderCell: params => (
       <Typography variant='body2' sx={{ color: 'text.primary' }}>
-        {params.row.salary}
+        {params.row.alamat}
       </Typography>
     )
   },
   {
     flex: 0.125,
-    field: 'age',
+    field: 'desa',
     minWidth: 80,
-    headerName: 'Age',
+    headerName: 'desa',
     renderCell: params => (
       <Typography variant='body2' sx={{ color: 'text.primary' }}>
-        {params.row.age}
+        {params.row.desa}
       </Typography>
     )
   },
   {
-    flex: 0.2,
-    minWidth: 140,
-    field: 'status',
-    headerName: 'Status',
-    renderCell: params => {
-      const status = statusObj[params.row.status]
-
-      return (
-        <CustomChip
-          rounded
-          size='small'
-          skin='light'
-          color={status.color}
-          label={status.title}
-          sx={{ '& .MuiChip-label': { textTransform: 'capitalize' } }}
-        />
-      )
-    }
+    flex: 0.125,
+    field: 'kecamatan',
+    minWidth: 80,
+    headerName: 'kecamatan',
+    renderCell: params => (
+      <Typography variant='body2' sx={{ color: 'text.primary' }}>
+        {params.row.kecamatan}
+      </Typography>
+    )
+  },
+  {
+    flex: 0.125,
+    field: 'pekerjaan',
+    minWidth: 80,
+    headerName: 'pekerjaan',
+    renderCell: params => (
+      <Typography variant='body2' sx={{ color: 'text.primary' }}>
+        {params.row.pekerjaan}
+      </Typography>
+    )
+  },
+  {
+    flex: 0.125,
+    field: 'J. Kelamin',
+    minWidth: 80,
+    headerName: 'J. Kelamin',
+    renderCell: params => (
+      <Typography variant='body2' sx={{ color: 'text.primary' }}>
+        {params.row.jenisKelamin}
+      </Typography>
+    )
+  },
+  {
+    flex: 0.125,
+    field: 'No. HP',
+    minWidth: 80,
+    headerName: 'No. HP',
+    renderCell: params => (
+      <Typography variant='body2' sx={{ color: 'text.primary' }}>
+        {params.row.nohp}
+      </Typography>
+    )
   }
 ]
 
@@ -153,7 +169,7 @@ const TableColumns = () => {
 
   return (
     <Card>
-      <CardHeader title='Quick Filter' />
+      <CardHeader title='Data Relawan' />
       <DataGrid
         autoHeight
         columns={columns}
