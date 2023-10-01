@@ -50,19 +50,12 @@ const Home = () => {
         <Grid item xs={12}>
           <Card>
             <CardHeader title='Kelompok Usia' />
-            <CardContent
-              sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                textAlign: 'center'
-              }}
-            >
-              <Grid container spacing={6} margin={0}>
-                <Grid item xs={12} md={8} sx={{ margin: '0 auto', width: '100%' }} mx={'auto'}>
+            <CardContent>
+              <Grid container spacing={6}>
+                <Grid item xs={12} md={8}>
                   <ApexBarChart />
                 </Grid>
-                <Grid item xs={12} md={4} sx={{ margin: '0 auto', width: '100%' }} mx={'auto'}>
+                <Grid item xs={12} md={4}>
                   <TableBasic />
                 </Grid>
               </Grid>
