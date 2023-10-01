@@ -141,8 +141,8 @@ export const VerticalNavHeader = props => {
         )}
       </MenuHeaderWrapper>
 
-      <Box sx={{ pl: menuHeaderPaddingLeft, display: 'flex' }}>
-        {/* <Badge
+      {/* <Box sx={{ pl: menuHeaderPaddingLeft, display: 'flex' }}>
+        <Badge
           overlap='circular'
           badgeContent={<BadgeContentSpan />}
           anchorOrigin={{
@@ -155,9 +155,9 @@ export const VerticalNavHeader = props => {
         <Box sx={{ display: 'flex', ml: 2.5, alignItems: 'flex-start', flexDirection: 'column' }}>
           <Typography sx={{ fontWeight: 500 }}>John Doe</Typography>
           <Typography variant='body2'>Admin</Typography>
-        </Box> */}
+        </Box>
         <UserDropdown settings={settings} />
-      </Box>
+      </Box> */}
     </>
   )
 }

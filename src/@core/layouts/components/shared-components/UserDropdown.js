@@ -81,7 +81,7 @@ const UserDropdown = props => {
 
   return (
     <Fragment>
-      {/* <Badge
+      <Badge
         overlap='circular'
         sx={{ ml: 2, cursor: 'pointer' }}
         badgeContent={<BadgeContentSpan />}
@@ -100,7 +100,7 @@ const UserDropdown = props => {
       <Box sx={{ display: 'flex', ml: 2.5, alignItems: 'flex-start', flexDirection: 'column' }}>
         <Typography sx={{ fontWeight: 500 }}>John Doe</Typography>
         <Typography variant='body2'>Admin</Typography>
-      </Box>{' '} */}
+      </Box>
       <Menu
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}

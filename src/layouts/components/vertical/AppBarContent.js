@@ -35,13 +35,13 @@ const AppBarContent = props => {
             <Icon fontSize='1.5rem' icon='tabler:menu-2' />
           </IconButton>
         ) : null}
-        {/* <Autocomplete hidden={hidden} settings={settings} /> */}
+        <Autocomplete hidden={hidden} settings={settings} />
       </Box>
       <Box className='actions-right' sx={{ display: 'flex', alignItems: 'center' }}>
         {/* <LanguageDropdown settings={settings} saveSettings={saveSettings} /> */}
         {/* <ShortcutsDropdown settings={settings} shortcuts={shortcuts} /> */}
-        <ModeToggler settings={settings} saveSettings={saveSettings} />
-        <NotificationDropdown settings={settings} notifications={notifications} />
+        {/* <ModeToggler settings={settings} saveSettings={saveSettings} /> */}
+        {/* <NotificationDropdown settings={settings} notifications={notifications} /> */}
         <UserDropdown settings={settings} />
       </Box>
     </Box>
