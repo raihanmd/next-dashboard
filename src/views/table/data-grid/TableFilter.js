@@ -23,17 +23,6 @@ import { rows } from 'src/@fake-db/table/static-data'
 const renderClient = params => {
   const { row } = params
   const stateNum = Math.floor(Math.random() * 6)
-  // const states = ['success', 'error', 'warning', 'info', 'primary', 'secondary']
-  // const color = states[stateNum]
-  // if (row.avatar.length) {
-  //   return <CustomAvatar src={`/images/avatars/${row.avatar}`} sx={{ mr: 3, width: '1.875rem', height: '1.875rem' }} />
-  // } else {
-  //   return (
-  //     <CustomAvatar skin='light' color={color} sx={{ mr: 3, fontSize: '.8rem', width: '1.875rem', height: '1.875rem' }}>
-  //       {getInitials(row.full_name ? row.full_name : 'John Doe')}
-  //     </CustomAvatar>
-  //   )
-  // }
 }
 
 const escapeRegExp = value => {
