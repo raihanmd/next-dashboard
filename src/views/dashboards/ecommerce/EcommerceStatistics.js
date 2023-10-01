@@ -42,6 +42,12 @@ const data = [
     color: 'success',
     title: 'Cimaragas',
     icon: 'material-symbols:person-outline'
+  },
+  {
+    stats: '7567',
+    color: 'info',
+    title: 'Total',
+    icon: 'tabler:chart-bar'
   }
 ]
 

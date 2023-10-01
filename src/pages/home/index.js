@@ -29,7 +29,7 @@ const Home = () => {
         <Grid item xs={6} sm={4} lg={2}>
           <CrmSessions />
         </Grid> */}
-        <Grid item xs={12} lg={2}>
+        {/* <Grid item xs={12} lg={2}>
           <CardStatsVertical
             stats='7.567'
             chipText='+25.2%'
@@ -38,7 +38,7 @@ const Home = () => {
             title='Total'
             avatarIcon='tabler:chart-bar'
           />
-        </Grid>
+        </Grid> */}
         <Grid item xs={12} md={12}>
           <ApexDonutChart />
         </Grid>
