@@ -70,15 +70,7 @@ const renderStats = () => {
 const EcommerceStatistics = () => {
   return (
     <Card>
-      <CardHeader
-        title='Data per Kecamatan'
-        sx={{ '& .MuiCardHeader-action': { m: 0, alignSelf: 'center' } }}
-        // action={
-        //   <Typography variant='body2' sx={{ color: 'text.disabled' }}>
-        //     Updated 1 month ago
-        //   </Typography>
-        // }
-      />
+      <CardHeader title='Data per Kecamatan' sx={{ '& .MuiCardHeader-action': { m: 0, alignSelf: 'center' } }} />
       <CardContent
         sx={{ pt: theme => `${theme.spacing(7)} !important`, pb: theme => `${theme.spacing(7.5)} !important` }}
       >
