@@ -8,11 +8,8 @@ import CardContent from '@mui/material/CardContent'
 import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
 const donutColors = {
-  series1: '#fdd835',
-  series2: '#00d4bd',
-  series3: '#826bf8',
-  series4: '#1FD5EB',
-  series5: '#ffa1a1'
+  series1: '#ffa1a1',
+  series2: '#826bf8'
 }
 
 const ApexDonutChart = () => {
@@ -21,8 +18,8 @@ const ApexDonutChart = () => {
 
   const options = {
     stroke: { width: 0 },
-    labels: ['Operational', 'Networking', 'Hiring', 'R&D'],
-    colors: [donutColors.series1, donutColors.series5, donutColors.series3, donutColors.series2],
+    labels: ['Laki-laki', 'Prempuan'],
+    colors: [donutColors.series1, donutColors.series2],
     dataLabels: {
       enabled: true,
       formatter: val => `${parseInt(val, 10)}%`
@@ -48,13 +45,6 @@ const ApexDonutChart = () => {
               fontSize: '1.2rem',
               color: theme.palette.text.secondary,
               formatter: val => `${parseInt(val, 10)}`
-            },
-            total: {
-              show: true,
-              fontSize: '1.2rem',
-              label: 'Operational',
-              formatter: () => '31%',
-              color: theme.palette.text.primary
             }
           }
         }
@@ -104,12 +94,11 @@ const ApexDonutChart = () => {
   return (
     <Card>
       <CardHeader
-        title='Expense Ratio'
-        subheader='Spending on various categories'
+        title='Potensi pemilih per Jenis Kelamin'
         subheaderTypographyProps={{ sx: { color: theme => `${theme.palette.text.disabled} !important` } }}
       />
       <CardContent>
-        <ReactApexcharts type='donut' height={400} options={options} series={[85, 16, 50, 50]} />
+        <ReactApexcharts type='donut' height={400} options={options} series={[4617, 2950]} />
       </CardContent>
     </Card>
   )

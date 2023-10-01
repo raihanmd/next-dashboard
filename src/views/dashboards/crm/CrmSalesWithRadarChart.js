@@ -36,7 +36,7 @@ const CrmSalesWithRadarChart = () => {
     fill: {
       opacity: [1, 0.85]
     },
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    labels: ['Laki laki', 'Perempuan'],
     markers: { size: 0 },
     legend: {
       fontSize: '14px',

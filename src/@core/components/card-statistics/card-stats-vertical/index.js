@@ -26,7 +26,7 @@ const CardStatsVertical = props => {
   const RenderChip = chipColor === 'default' ? Chip : CustomChip
 
   return (
-    <Card sx={{ ...sx }}>
+    <Card sx={{ ...sx, height: '100%' }}>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
         <CustomAvatar
           skin='light'
@@ -43,14 +43,14 @@ const CardStatsVertical = props => {
           {subtitle}
         </Typography>
         <Typography sx={{ mb: 3.5, color: 'text.secondary' }}>{stats}</Typography>
-        <RenderChip
+        {/* <RenderChip
           size='small'
           label={chipText}
           color={chipColor}
           {...(chipColor === 'default'
             ? { sx: { borderRadius: '4px', color: 'text.secondary' } }
             : { rounded: true, skin: 'light' })}
-        />
+        /> */}
       </CardContent>
     </Card>
   )
