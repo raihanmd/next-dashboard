@@ -11,10 +11,15 @@ import CrmSalesWithRadarChart from 'src/views/dashboards/crm/CrmSalesWithRadarCh
 import CrmEarningReportsWithTabs from 'src/views/dashboards/crm/CrmEarningReportsWithTabs'
 import EcommerceStatistics from 'src/views/dashboards/ecommerce/EcommerceStatistics'
 import ApexDonutChart from 'src/views/charts/apex-charts/ApexDonutChart'
+import ApexBarChart from 'src/views/charts/apex-charts/ApexBarChart'
+import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
 
 // ** Custom Component Imports
-import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
 import CardStatsVertical from 'src/@core/components/card-statistics/card-stats-vertical'
+import Card from '@mui/material/Card'
+import TableBasic from 'src/views/table/mui/TableBasic'
+import CardHeader from '@mui/material/CardHeader'
+import CardContent from '@mui/material/CardContent'
 
 const Home = () => {
   return (
@@ -39,8 +44,23 @@ const Home = () => {
             avatarIcon='tabler:chart-bar'
           />
         </Grid> */}
-        <Grid item xs={12} md={12}>
+        <Grid item xs={12}>
           <ApexDonutChart />
+        </Grid>
+        <Grid item xs={12}>
+          <Card>
+            <CardHeader title='Kelompok Usia' />
+            <CardContent>
+              <Grid container spacing={6}>
+                <Grid xs={12} md={8}>
+                  <ApexBarChart />
+                </Grid>
+                <Grid xs={12} md={4}>
+                  <TableBasic />
+                </Grid>
+              </Grid>
+            </CardContent>
+          </Card>
         </Grid>
         {/* <Grid item xs={12} lg={8}>
           <CrmEarningReportsWithTabs />

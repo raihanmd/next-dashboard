@@ -18,6 +18,7 @@ import Icon from 'src/@core/components/icon'
 
 // ** Component Import
 import ReactApexcharts from 'src/@core/components/react-apexcharts'
+import { Container, Typography } from '@mui/material'
 
 const ApexBarChart = () => {
   // ** States
@@ -59,7 +60,7 @@ const ApexBarChart = () => {
     xaxis: {
       axisBorder: { show: false },
       axisTicks: { color: theme.palette.divider },
-      categories: ['MON, 11', 'THU, 14', 'FRI, 15', 'MON, 18', 'WED, 20', 'FRI, 21', 'MON, 23'],
+      categories: ['<17 Tahun', '17-20 Tahun', '21-30 Tahun', '31-40 Tahun', '41-50 Tahun', '51-60 Tahun', '>60 Tahun'],
       labels: {
         style: { colors: theme.palette.text.disabled }
       }
@@ -100,38 +101,12 @@ const ApexBarChart = () => {
   }
 
   return (
-    <Card>
-      <CardHeader
-        title='Data Science'
-        subheader='$74,382.72'
-        sx={{
-          flexDirection: ['column', 'row'],
-          alignItems: ['flex-start', 'center'],
-          '& .MuiCardHeader-action': { mb: 0 },
-          '& .MuiCardHeader-content': { mb: [2, 0] }
-        }}
-        action={
-          <DatePicker
-            selectsRange
-            endDate={endDate}
-            id='apexchart-bar'
-            selected={startDate}
-            startDate={startDate}
-            onChange={handleOnChange}
-            placeholderText='Click to select a date'
-            customInput={<CustomInput start={startDate} end={endDate} />}
-          />
-        }
-      />
-      <CardContent>
-        <ReactApexcharts
-          type='bar'
-          height={400}
-          options={options}
-          series={[{ data: [700, 350, 480, 600, 210, 550, 150] }]}
-        />
-      </CardContent>
-    </Card>
+    <ReactApexcharts
+      type='bar'
+      height={400}
+      options={options}
+      series={[{ data: [7, 856, 1298, 2070, 1554, 1055, 736] }]}
+    />
   )
 }
 
