@@ -52,10 +52,10 @@ const Home = () => {
             <CardHeader title='Kelompok Usia' />
             <CardContent>
               <Grid container spacing={6}>
-                <Grid xs={12} md={8} sx={{ padding: '20px' }}>
+                <Grid xs={12} md={8} sx={{ padding: '20px', width: '100%' }}>
                   <ApexBarChart />
                 </Grid>
-                <Grid xs={12} md={4} sx={{ padding: '20px' }}>
+                <Grid xs={12} md={4} sx={{ padding: '20px', width: '100%' }}>
                   <TableBasic />
                 </Grid>
               </Grid>
