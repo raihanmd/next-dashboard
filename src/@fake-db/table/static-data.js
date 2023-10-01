@@ -6,6 +6,7 @@ export const rows = [
     alamat: 'Baregbeg',
     desa: 'Baregbeg',
     pekerjaan: 'Guru',
+    kecamatan: 'Baregbeg',
     jenisKelamin: 'Laki-laki',
     nohp: '082637448154'
   },
@@ -16,6 +17,7 @@ export const rows = [
     alamat: 'Baregbeg',
     desa: 'Baregbeg',
     pekerjaan: 'Guru',
+    kecamatan: 'Baregbeg',
     jenisKelamin: 'Laki-laki',
     nohp: '082637448154'
   },
@@ -26,6 +28,7 @@ export const rows = [
     alamat: 'Baregbeg',
     desa: 'Baregbeg',
     pekerjaan: 'Guru',
+    kecamatan: 'Baregbeg',
     jenisKelamin: 'Laki-laki',
     nohp: '082637448154'
   },
@@ -36,6 +39,7 @@ export const rows = [
     alamat: 'Baregbeg',
     desa: 'Baregbeg',
     pekerjaan: 'Guru',
+    kecamatan: 'Baregbeg',
     jenisKelamin: 'Laki-laki',
     nohp: '082637448154'
   },
@@ -46,6 +50,7 @@ export const rows = [
     alamat: 'Baregbeg',
     desa: 'Baregbeg',
     pekerjaan: 'Guru',
+    kecamatan: 'Baregbeg',
     jenisKelamin: 'Laki-laki',
     nohp: '082637448154'
   },
@@ -56,6 +61,7 @@ export const rows = [
     alamat: 'Baregbeg',
     desa: 'Baregbeg',
     pekerjaan: 'Guru',
+    kecamatan: 'Baregbeg',
     jenisKelamin: 'Laki-laki',
     nohp: '082637448154'
   },
@@ -66,6 +72,7 @@ export const rows = [
     alamat: 'Baregbeg',
     desa: 'Baregbeg',
     pekerjaan: 'Guru',
+    kecamatan: 'Baregbeg',
     jenisKelamin: 'Laki-laki',
     nohp: '082637448154'
   },
@@ -76,6 +83,7 @@ export const rows = [
     alamat: 'Baregbeg',
     desa: 'Baregbeg',
     pekerjaan: 'Guru',
+    kecamatan: 'Baregbeg',
     jenisKelamin: 'Laki-laki',
     nohp: '082637448154'
   }
