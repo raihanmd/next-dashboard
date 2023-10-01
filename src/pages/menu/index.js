@@ -1,9 +1,5 @@
-const kelasSiswa = () => {
-  return (
-    <>
-      <p>Kelas Page</p>
-    </>
-  )
-}
+import React from 'react'
 
-export default kelasSiswa
+export default function Menu() {
+  return <div>Menu</div>
+}

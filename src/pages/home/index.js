@@ -45,9 +45,6 @@ const Home = () => {
           />
         </Grid> */}
         <Grid item xs={12}>
-          <ApexDonutChart />
-        </Grid>
-        <Grid item xs={12}>
           <Card>
             <CardHeader title='Kelompok Usia' />
             <CardContent>
@@ -61,6 +58,9 @@ const Home = () => {
               </Grid>
             </CardContent>
           </Card>
+        </Grid>
+        <Grid item xs={12}>
+          <ApexDonutChart />
         </Grid>
         {/* <Grid item xs={12} lg={8}>
           <CrmEarningReportsWithTabs />

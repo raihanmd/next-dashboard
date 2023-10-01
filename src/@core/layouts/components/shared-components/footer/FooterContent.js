@@ -16,8 +16,8 @@ const FooterContent = () => {
           ❤️
         </Box>
         {` by `}
-        <MuiLink target='_blank' href='https://pahamdigital.com'>
-          Pahamdigital
+        <MuiLink target='_blank' href='#'>
+          Kreatifwork
         </MuiLink>
       </Typography>
     </Box>
